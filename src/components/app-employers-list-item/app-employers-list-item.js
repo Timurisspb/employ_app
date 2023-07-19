@@ -1,13 +1,13 @@
-import { Component } from "react";
+import { Component } from 'react';
+
 import './app-employers-list-item.css';
-import AppEmployersList from "../app-employers-list/app-employers-list";
 
-
-class AppEmployersListItem extends Component {
+class EmployeesListItem extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            increase: false
+            increase: false,
+            rise: false
         }
     }
 
@@ -17,37 +17,47 @@ class AppEmployersListItem extends Component {
         }))
     }
 
-    render() {
-        const { name, department, salary, experience} = this.props;
-        const {increase} = this.state;
+    onRise = () => {
+        this.setState(({rise}) => ({
+            rise: !rise
+        }))
+    }
 
-        let classNames = "list-group-item d-flex justify-content-between like";
+    render() {
+        const {name, salary, department, experience, id, onDelete} = this.props;
+        const {increase, rise} = this.state;
+
+        let classNames = "list-group-item d-flex justify-content-between";
         if (increase) {
             classNames += ' increase';
         }
+        if (rise) {
+            classNames += ' like';
+        }
+
         return (
-
-
             <li className={classNames}>
-                <span className="list-group-item-label">{name}</span>
+                <div className="list-group-item-input">{id + '.'}</div>
+                <span className="list-group-item-label" onClick={this.onRise}>{name}</span>
                 <input type="text" className="list-group-item-input" defaultValue={department}/>
-                <input type="text" className="list-group-item-input" defaultValue={salary + ' p'}/>
+                <input type="text" className="list-group-item-input" defaultValue={salary + '$'}/>
                 <input type="text" className="list-group-item-input" defaultValue={experience}/>
-                <div className="d-flex justify-content-center align-items-center">
-                    <button type="button" className="btn-coolie btn-sm"
+                <div className='d-flex justify-content-center align-items-center'>
+                    <button type="button"
+                            className="btn-cookie btn-sm "
                             onClick={this.onIncrease}>
                         <i className="fas fa-cookie"></i>
                     </button>
 
-                    <button type="button" className="btn-trash btn-sm">
+                    <button type="button"
+                            className="btn-trash btn-sm " onClick={onDelete}>
                         <i className="fas fa-trash"></i>
                     </button>
                     <i className="fas fa-star"></i>
                 </div>
             </li>
-
         )
     }
 }
 
-export default AppEmployersListItem;
+export  default EmployeesListItem;
