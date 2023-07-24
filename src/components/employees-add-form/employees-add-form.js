@@ -57,13 +57,13 @@ class EmployeesAddForm extends Component {
 
                            value={name}
                            onChange={this.onValueChange}/>
-                    <select type="text"
-                           className="form-control new-post-label"
+                    <select type="select"
+                           className="form-control-s new-post-label"
                            placeholder="Отдел:"
                            name="department"
                            value={department}
                            onChange={this.onValueChange} defaultValue={'IT'}> // не подставляется деффолтное значение при добавлении сотрудника ( исправить ) + стили селекта
-                        <option>Отдел</option>       // исправить
+                        <option>Отдел:</option>       // исправить
                         <option>Безопасность</option>
                         <option>Менеджмент</option>
                     </select>
