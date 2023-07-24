@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+Для запуска набрать:
 
 ### `npm start`
 
@@ -15,3 +15,8 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ## Project structure
+
+## Шапка (app info)
+## Поисковая панель (search-panel)
+## Список сотрудников (employees-list)
+## Добавление нового сотрудника (employees-add-form)
