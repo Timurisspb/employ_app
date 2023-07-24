@@ -13,9 +13,12 @@ class App extends Component {
         super(props);
         this.state = {
             data: [
-                {name: 'Наумов Степан Викторович', salary: 100000 , increase: false, rise: true, id: 1},
-                {name: 'Башкирцев Алексей Александрович', salary: 60000, increase: true, rise: false, id: 2},
-                {name: 'Балакирева Елизавета Антоновна', salary: 850, increase: false, rise: false, id: 3}
+                {name: 'Наумович Степан Викторович',department: 'IT',salary: 100000 , increase: false, rise: true, id: 1},
+                {name: 'Башкирцев Алексей Александрович',department: 'Менеджмент', salary: 60000, increase: true, rise: false, id: 2},
+                {name: 'Балакирева Елизавета Антоновна',department: 'Логистика', salary: 85000, increase: false, rise: false, id: 3},
+                {name: 'Кийко Максим Владимирович',department: 'Безопасность', salary: 90000, increase: false, rise: false, id: 4},
+                {name: 'Насибуллин Тимур Радикович',department: 'IT', salary: 110000, increase: false, rise: false, id: 5},
+
             ],
             term: '',
             filter: 'all'
@@ -31,10 +34,10 @@ class App extends Component {
         })
     }
 
-    // Да, пока могут добавляться пустые пользователи. Мы это еще исправим
-    addItem = (name, salary) => {
+    addItem = (name, department,salary,) => {
         const newItem = {
             name,
+            department,
             salary,
             increase: false,
             rise: false,
@@ -77,7 +80,7 @@ class App extends Component {
         switch (filter) {
             case 'rise':
                 return items.filter(item => item.rise);
-            case 'moreThen1000':
+            case 'moreThen100000':
                 return items.filter(item => item.salary > 100000);
             default:
                 return items
@@ -91,7 +94,7 @@ class App extends Component {
     render() {
         const {data, term, filter} = this.state;
         const employees = this.state.data.length;
-        const increased = this.state.data.filter(item => item.increase).length;
+        const increased = this.state.data.filter(item => item.increase).length; // счетчик сотрудников
         const visibleData = this.filterPost(this.searchEmp(data, term), filter);
 
         return (
