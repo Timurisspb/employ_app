@@ -1,15 +1,13 @@
 import { Component } from 'react';
 
-import './app-employers-add-form.css'
+import './employees-add-form.css';
 
-class AppEmployersAddForm extends Component {
+class EmployeesAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
-            department: '',
-            salary: '',
-            experience: ''
+            salary: ''
         }
     }
 
@@ -19,38 +17,39 @@ class AppEmployersAddForm extends Component {
         })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        // Можно еще и сообщения добавлять, подсветку, атрибуты minlength и тд.
+        if (this.state.name.length < 3 || !this.state.salary) return;
+        this.props.onAdd(this.state.name, this.state.salary);
+        this.setState({
+            name: '',
+            salary: ''
+        })
+    }
+
     render() {
-        const {name, department, salary, experience} = this.state;
+        const {name, salary} = this.state;
 
         return (
             <div className="app-add-form">
                 <h3>Добавьте нового сотрудника</h3>
                 <form
-                    className="add-form d-flex">
+                    className="add-form d-flex"
+                    onSubmit = {this.onSubmit}>
                     <input type="text"
                            className="form-control new-post-label"
                            placeholder="Как его зовут?"
                            name="name"
                            value={name}
                            onChange={this.onValueChange}/>
-                    <input type="text"
-                           className="form-control new-post-label"
-                           placeholder="Отдел"
-                           name="department"
-                           value={department}
-                           onChange={this.onValueChange}/>
                     <input type="number"
                            className="form-control new-post-label"
-                           placeholder="Зарплата"
+                           placeholder="З/П в $?"
                            name="salary"
                            value={salary}
                            onChange={this.onValueChange}/>
-                    <input type="text"
-                           className="form-control new-post-label"
-                           placeholder="Стаж"
-                           name="experience"
-                           value={experience}
-                           onChange={this.onValueChange}/>
+
                     <button type="submit"
                             className="btn btn-outline-light">Добавить</button>
                 </form>
@@ -59,4 +58,4 @@ class AppEmployersAddForm extends Component {
     }
 }
 
-export default AppEmployersAddForm;
+export default EmployeesAddForm;
