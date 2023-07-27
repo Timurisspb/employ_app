@@ -8,7 +8,7 @@ class EmployeesAddForm extends Component {
         this.state = {
             id: '',
             name: '',
-            department: '',
+            department: 'IT',
             salary: ''
         }
     }
@@ -54,7 +54,6 @@ class EmployeesAddForm extends Component {
                            className="form-control new-post-label"
                            placeholder="ФИО:"
                            name="name"
-
                            value={name}
                            onChange={this.onValueChange}/>
                     <select type="select"
@@ -62,16 +61,15 @@ class EmployeesAddForm extends Component {
                            placeholder="Отдел:"
                            name="department"
                            value={department}
-                           onChange={this.onValueChange} defaultValue={'IT'}> // не подставляется деффолтное значение при добавлении сотрудника ( исправить ) + стили селекта
-                        <option>Отдел:</option>       // исправить
+                           onChange={this.onValueChange}>
                         <option>Безопасность</option>
                         <option>Менеджмент</option>
+                        <option>IT</option>
                     </select>
                     <input type="number"
                            className="form-control new-post-label"
                            placeholder="Зарплата в  ₽:"
                            name="salary"
-                           onkeypress="validate(event)"
                            value={salary}
                            onChange={this.onValueChange}/>
 
