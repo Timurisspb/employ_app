@@ -29,6 +29,7 @@ interface example {
     1: number;
     [key: string]: string|number;
 }
+
 type evoidExId = Pick<Partial<example>, 'name' | 'salary'>
 type es = Pick<Required<example>, 'address' | 'id' | 'phone'>
 
