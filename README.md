@@ -1,5 +1,5 @@
 # Мой пет-проект,
-цель которого протестировать навыки TS, JS, CSS, React.
+Цель которого протестировать навыки TS, JS, CSS, React.
 Доменная область - работа над сотрудниками в компании.
 В проекте отсутствуют REST-запросы. Список сотрудников предоставлен заранее
 в массиве сотрудников, и все операции над сотрудниками выполняются в соответствующих функциях
@@ -8,13 +8,11 @@
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Запуск приложения в режиме разработки.\
+Откройте [http://localhost:3000](http://localhost:3000), чтобы просмотреть его в браузере.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-## Project structure
+## Структура проекта
 
 ## Шапка (app info)
 ## Поисковая панель (search-panel)
