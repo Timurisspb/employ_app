@@ -1,8 +1,8 @@
-# Employee APP. My pet project
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+# Мой пет-проект,
+цель которого протестировать навыки TS, JS, CSS, React.
+Доменная область - работа над сотрудниками в компании.
+В проекте отсутствуют REST-запросы. Список сотрудников предоставлен заранее
+в массиве сотрудников, и все операции над сотрудниками выполняются в соответствующих функциях
 
 Для запуска набрать:
 

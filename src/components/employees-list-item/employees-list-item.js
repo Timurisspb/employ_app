@@ -13,7 +13,6 @@ const EmployeesListItem = (props) => {
     }
 
     return (
-
         <li className={classNames}>
             <span className="list-group-item-label" onClick={onToggleProp} data-toggle="rise">{name}</span>
             <span className="list-group-item-label">{department}</span>

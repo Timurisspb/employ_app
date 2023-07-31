@@ -20,11 +20,11 @@ export const addItem = (name: string, department: string, salary: number): Emplo
 
 export const searchEmployeeByName = (term: string, employees: Employee[]): Employee[] => employees.filter(item => item.name.indexOf(term) > -1)
 
-export const filterPost = (items: Employee[], filter: 'rise'| 'moreThen100000') => {
+export const filterPost = (items: Employee[], filter: 'rise'| 'moreThan100000') => {
     switch (filter) {
         case 'rise':
             return items.filter(item => item.rise);
-        case 'moreThen100000':
+        case 'moreThan100000':
             return items.filter(item => item.salary > 100000);
         default: return items
     }
