@@ -2,7 +2,8 @@
   "root": true,
   "parser": "@babel/eslint-parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "css-in-js"
   ],
   "extends": [
     "eslint:recommended",

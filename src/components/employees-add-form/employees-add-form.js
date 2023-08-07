@@ -63,6 +63,7 @@ class EmployeesAddForm extends Component {
                            value={department}
                            onChange={this.onValueChange}>
                         <option>Безопасность</option>
+                        <option>Логистика</option>
                         <option>Менеджмент</option>
                         <option>IT</option>
                     </select>

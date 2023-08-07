@@ -1,4 +1,5 @@
 import "./app-filter.css";
+
 const AppFilter = (props) => {
     const buttonsData = [
         {name: 'all', label: 'Все сотрудники'},

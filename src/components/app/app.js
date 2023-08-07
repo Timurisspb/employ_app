@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import AppInfo from "./app-info/app-info";
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
@@ -56,14 +55,16 @@ class App extends Component {
         const increased = data.filter(item => item.increase).length; // счетчик сотрудников
         const visibleData = filterPost(this.searchEmp(data, term), filter);
 
+
         return (
             <div className="app">
                 <AppInfo employees={employees} increased={increased}/>
 
-                <div className="search-panel">
-                    <SearchPanel onUpdateSearch={this.onUpdateSearch}/>
-                    <AppFilter filter={filter} onFilterSelect={this.onFilterSelect}/>
-                </div>
+                <SearchPanel className="search-panel"
+                             onUpdateSearch={this.onUpdateSearch}
+                             value={this.state.term}
+                             onChange={this.onUpdateSearch}
+                             onFilterSelect={this.onFilterSelect}/>
 
                 <EmployeesList
                     data={visibleData}
